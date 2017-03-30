@@ -1,0 +1,12 @@
+<h1>Prueba desde template Ve</h1>
+<div data-ng-controller="myController">
+  <input type="text" data-ng-model="escriba" placeholder="escriba prueba">
+  {{escriba|uppercase}}
+</div>
+
+<div class="container">
+    <div ui-view></div>
+
+</div>
+<a ui-sref=".eleccion1">eleccion1</a>
+<a ui-sref=".eleccion2">eleccion2</a>
