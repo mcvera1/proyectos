@@ -48,5 +48,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.factory("beerService", function($http){
   function getBeers(){
     return $http.get("https://api.punkapi.com/v2/beers")
+
+    
   }
 })
