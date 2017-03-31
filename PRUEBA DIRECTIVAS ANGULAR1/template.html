@@ -2,6 +2,32 @@
 <div data-ng-controller="myController">
   <input type="text" data-ng-model="escriba" placeholder="escriba prueba">
   {{escriba|uppercase}}
+  <button type="button" ng-click="buscar()" name="button">Consultar</button>
+<label>Phone only <input ng-model="search.id"></label><br>
+  <table ng-table="tableParams" show-filter="true">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>Fecha creacion</td>
+        <td>Descripcion</td>
+      </tr>
+      <tr>
+        <td><input type="number" onkeypress="return soloNumeros(event);" ng-model="search.id"></td>
+        <td><input ng-model="search.name"></td>
+        <td></td>
+        <td><input ng-model="search.description"></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in beers| filter:search">
+        <td>{{x.id}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.first_brewed}}</td>
+        <td>{{x.description}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="container">
